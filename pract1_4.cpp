@@ -2,29 +2,32 @@
 using namespace std;
 
 
-void f(double& h,double& s,double& p){
-    double salary, nalog, total;
+void f(double& h,double& s,double& p, double& salary, double& nalog, double& total){
     salary = h * s * (1 + p / 100);
     nalog = salary * 0.13;
     total = salary - nalog;
-    
-    cout << "Îáùàÿ çàðàáîòàííàÿ ñóììà ñîñòàâëÿåò " << salary << endl;
-    cout << "Ïîäîõîäíûé íàëîã ñîñòàâëÿåò " << nalog << endl;
-    cout << "Ñóììà, ïîëó÷àåìàÿ íà ðóêè, ñîñòàâëÿåò " << total << endl;
+
 }
 
 
 int main(){
     setlocale(0, "");
     double h, s, p;
+    double salary, nalog, total;
 
-    cout << "Ââåäèòå êîë-âî îòðàáîòàííûõ ÷àñîâ: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«-Ã¢Ã® Ã®Ã²Ã°Ã Ã¡Ã®Ã²Ã Ã­Ã­Ã»Ãµ Ã·Ã Ã±Ã®Ã¢: ";
     cin >> h ;
-    cout << "Ââåäèòå ñòàâêó ïî÷àñîâîé îïëàòû: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã±Ã²Ã Ã¢ÃªÃ³ Ã¯Ã®Ã·Ã Ã±Ã®Ã¢Ã®Ã© Ã®Ã¯Ã«Ã Ã²Ã»: ";
     cin >> s;
-    cout << "Ââåäèòå % ïðåìèè ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ % Ã¯Ã°Ã¥Ã¬Ã¨Ã¨ ";
     cin >> p;
-    f(h,s,p);
+    
+    f(h,s,p,salary, nalog, total);
+    
+    cout << "ÃŽÃ¡Ã¹Ã Ã¿ Ã§Ã Ã°Ã Ã¡Ã®Ã²Ã Ã­Ã­Ã Ã¿ Ã±Ã³Ã¬Ã¬Ã  Ã±Ã®Ã±Ã²Ã Ã¢Ã«Ã¿Ã¥Ã² " << salary << endl;
+    cout << "ÃÃ®Ã¤Ã®ÃµÃ®Ã¤Ã­Ã»Ã© Ã­Ã Ã«Ã®Ã£ Ã±Ã®Ã±Ã²Ã Ã¢Ã«Ã¿Ã¥Ã² " << nalog << endl;
+    cout << "Ã‘Ã³Ã¬Ã¬Ã , Ã¯Ã®Ã«Ã³Ã·Ã Ã¥Ã¬Ã Ã¿ Ã­Ã  Ã°Ã³ÃªÃ¨, Ã±Ã®Ã±Ã²Ã Ã¢Ã«Ã¿Ã¥Ã² " << total << endl;
 
     return 0;
 }
+
