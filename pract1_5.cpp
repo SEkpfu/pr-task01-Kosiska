@@ -1,31 +1,27 @@
 #include <iostream>
 using namespace std;
-template <typename T>
 
-void f(T h1,  T s1, T h2,  T s2){
-    double salary1 = h1 * s1;
-    double salary2 = h2 * s2;
+void vvod(double& h1,  double& s1, double& h2,  double& s2){
+    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ С‡Р°СЃРѕРІ Рё СЃС‚Р°РІРєСѓ РґР»СЏ 1 СЂР°Р±РѕС‚РЅРёРєР°: ";
+    cin >> h1 >> s1;
+    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ С‡Р°СЃРѕРІ Рё СЃС‚Р°РІРєСѓ РґР»СЏ 2 СЂР°Р±РѕС‚РЅРёРєР°: ";
+    cin >> h2 >> s2;
+}
 
-    cout << "Заработал больше работник под номером " << (salary1 > salary2?"1":"2") << endl;
-    cout << "Сумма, заработанная двумя работниками вместе, составляет " << salary1+salary2 << endl;
+void f(double h1,  double s1, double h2,  double s2, double& salary1, double& salary2){
+    salary1 = h1 * s1;
+    salary2 = h2 * s2;
 }
 
 
 int main(){
     setlocale(0, "");
-    double h1, s1, h2, s2;
+    double h1, s1, h2, s2, salary1, salary2;
+    vvod(h1, s1, h2, s2);
+    f(h1, s1, h2, s2, salary1, salary2);
 
-    cout << "Введите кол-во отработанных часов для первого работника: ";
-    cin >> h1;
-    cout << "Введите ставку почасовой оплаты для первого работника: ";
-    cin >> s1;
-
-    cout << "Введите кол-во отработанных часов для второго работника: ";
-    cin >> h2;
-    cout << "Введите ставку почасовой оплаты для второго работника: ";
-    cin >> s2;
-    
-    f(h1, s1, h2, s2);
+    cout << "Р—Р°СЂР°Р±РѕС‚Р°Р» Р±РѕР»СЊС€Рµ СЂР°Р±РѕС‚РЅРёРє РїРѕРґ РЅРѕРјРµСЂРѕРј " << (salary1 > salary2?"1":"2") << endl;
+    cout << "РЎСѓРјРјР°, Р·Р°СЂР°Р±РѕС‚Р°РЅРЅР°СЏ РґРІСѓРјСЏ СЂР°Р±РѕС‚РЅРёРєР°РјРё РІРјРµСЃС‚Рµ, СЃРѕСЃС‚Р°РІР»СЏРµС‚ " << salary1+salary2 << endl;
 
     return 0;
 }
