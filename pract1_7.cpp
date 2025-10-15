@@ -1,12 +1,11 @@
 #include <iostream>
 #include <Windows.h>
-#include <format>
 using namespace std;
 
 
 double f(double h,double s){
     double salary;
-    salary = h * s;
+    salary = h * s * 0.87;
     return salary;
 }
 
@@ -29,3 +28,4 @@ int main(){
 
     return 0;
 }
+
