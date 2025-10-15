@@ -57,6 +57,8 @@ int main(){
         }
         
         sum += nalogi[i];
+        delete[] salary;
+        delete[] nalogi;
     }
 
     cout << "номер работника, получившего меньше всех: " << nmin + 1 << endl;
@@ -67,3 +69,4 @@ int main(){
 
     return 0;
 }
+
