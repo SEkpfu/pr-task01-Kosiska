@@ -2,20 +2,25 @@
 using namespace std;
 
 
-void f(double& h, double& s, double& p, double& salary, double& nalog, double& total){
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð°ÑÑ‹ Ñ€Ð°Ð±Ð¾Ñ‚Ñ‹, ÑÑ‚Ð°Ð²ÐºÑƒ Ð¸ Ð¿Ñ€ÐµÐ¼Ð¸ÑŽ Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: ";
+void vvod(double& h, double& s, double& p){
+    cout << "Ââåäèòå ÷àñû ðàáîòû, ñòàâêó è ïðåìèþ ðàáîòíèêà: ";
     cin >> h >> s >> p;
+}
+
+void f(double h, double s, double p, double& salary, double& nalog, double& total){
+
     salary = h * s * (1 + p / 100);
     nalog = salary * 0.13;
     total = salary - nalog;
-}
 
+}
 
 int main(){
     setlocale(0, "");
     double h, s, p, nalog, salary, total;
+    vvod(h, s,p);
     f(h, s, p, salary, nalog, total);
-    cout << "ÐžÐ±Ñ‰Ð°Ñ ÑÑƒÐ¼Ð¼Ð°, ÑÑƒÐ¼Ð¼Ð° Ð½Ð°Ð»Ð¾Ð³Ð° Ð¸ Ð·Ð¿ Ð½Ð° Ñ€ÑƒÐºÐ¸: ";
+    cout << "Îáùàÿ ñóììà, ñóììà íàëîãà è çï íà ðóêè: ";
     cout << salary << " " << nalog << " " << total;
 
     return 0;

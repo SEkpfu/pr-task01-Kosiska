@@ -3,31 +3,35 @@
 #include <Windows.h>
 using namespace std;
 
-void vvod(double& h1, double& s1, double& h2,  double& s2, string& fam1, string& fam2){
-    
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: ";
-    cin >> fam1;
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ Ð¾Ñ‚Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ñ… Ñ‡Ð°ÑÐ¾Ð² Ð¸ ÑÑ‚Ð°Ð²ÐºÑƒ Ð´Ð»Ñ 1 Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: ";
-    cin >> h1 >> s1;
-    cin.ignore();
-    
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ Ð²Ñ‚Ð¾Ñ€Ð¾Ð³Ð¾ Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: ";
-    cin >> fam2;
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ Ð¾Ñ‚Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ñ… Ñ‡Ð°ÑÐ¾Ð² Ð¸ ÑÑ‚Ð°Ð²ÐºÑƒ Ð´Ð»Ñ 2 Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: ";
-    cin >> h2 >> s2;
 
+    // for (int i = 0; i < 2; i++){
+    //     cout << i+1 << " ðàáîòíèê: " << endl;
+    //     vvod(h, s, fam);
+    //     f(h, s, salary, nalog, total);
+        
+    //     cout << "h" << i+1 << " = " << h << endl;
+    //     cout << "s" << i+1 << " = " << s << endl;
+    //     cout << "fam" << i+1 << " = " << fam << endl;
+    //     cout << "salary" << i+1 << " = " << salary << endl;
+    //     cout << "nalog" << i+1 << " = " << nalog << endl;
+    //     cout << "total" << i+1 << " = " << total << endl;
+    // }
+
+
+void vvod(double& h, double& s, string& fam){
+    
+    cout << "Ââåäèòå ôàìèëèþ ðàáîòíèêà: ";
+    cin >> fam;
+    cout << "Ââåäèòå êîë-âî îòðàáîòàííûõ ÷àñîâ è ñòàâêó: ";
+    cin >> h >> s;
+    cin.ignore();
 }
 
-void f(double h1, double s1, double h2,  double s2,  double& salary1, double& salary2, double& nalog1, double& nalog2, double& total1, double& total2){
+void f(double h, double s,double& salary,double& nalog, double& total){
     
-    salary1 = h1 * s1;
-    salary2 = h2 * s2;
-
-    nalog1 = salary1 * 0.13;
-    total1 = salary1 - nalog1;
-
-    nalog2 = salary2 * 0.13;
-    total2 = salary2 - nalog1;
+    salary = h * s;
+    nalog = salary * 0.13;
+    total = salary - nalog;
 }
 
 
@@ -35,15 +39,20 @@ int main(){
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
+
     double h1, s1, h2, s2, salary1, salary2, nalog1, nalog2, total1, total2;
-    string fam1, fam2;
+    string fam1, fam2, fam;
+    
+    cout << "Äëÿ 1 ðàáîòíèêà: "<< endl;
+    vvod(h1,s1,fam1);
+    f(h1,s1,salary1,nalog1,total1);
 
-    vvod(h1,s1,h2,s2,fam1,fam2);
-    f(h1, s1, h2, s2 ,salary1, salary2, nalog1, nalog2, total1, total2);
+    cout << "Äëÿ 2 ðàáîòíèêà: "<< endl;
+    vvod(h2,s2,fam2);
+    f(h2,s2,salary2,nalog2,total2);
 
 
-
-    cout << "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ð¸ Ñ‚ÐµÑ…, ÐºÑ‚Ð¾ Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð» Ð½Ð° Ñ€ÑƒÐºÐ¸ Ð¼ÐµÐ½ÑŒÑˆÐµ 1000 Ñ€ÑƒÐ± - ";
+    cout << "Ôàìèëèè òåõ, êòî ïîëó÷èë íà ðóêè ìåíüøå 1000 ðóá - ";
     if (total1 < 1000) {
         cout << fam1 << endl;
     }
@@ -53,7 +62,7 @@ int main(){
     cout << endl;
 
 
-    cout << "Ð Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ¸ Ñ Ð½Ð°Ð»Ð¾Ð³Ð¾Ð¼ Ð±Ð¾Ð»ÐµÐµ 50 Ñ€ÑƒÐ±Ð»ÐµÐ¹ (Ð¿ÐµÑ€Ð²Ð°Ñ Ð¸ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÑÑ Ð±ÑƒÐºÐ²Ð° Ñ„Ð°Ð¼Ð¸Ð»Ð¸Ð¸):" << endl;
+    cout << "Ðàáîòíèêè ñ íàëîãîì áîëåå 50 ðóáëåé (ïåðâàÿ è ïîñëåäíÿÿ áóêâà ôàìèëèè):" << endl;
     if (nalog1 > 50) {
         cout << fam1[0] << "-" << fam1[fam1.length() - 1] << endl;
     }

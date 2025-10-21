@@ -1,31 +1,32 @@
 #include <iostream>
 using namespace std;
 
-void vvod(double& h, double& s,double& p){
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ Ð¾Ñ‚Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ñ‹Ñ… Ñ‡Ð°ÑÐ¾Ð²: ";
+void vvod(double& h,double& s,double& p){
+    cout << "Ââåäèòå êîë-âî îòðàáîòàííûõ ÷àñîâ: ";
     cin >> h ;
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÑ‚Ð°Ð²ÐºÑƒ Ð¿Ð¾Ñ‡Ð°ÑÐ¾Ð²Ð¾Ð¹ Ð¾Ð¿Ð»Ð°Ñ‚Ñ‹: ";
+    cout << "Ââåäèòå ñòàâêó ïî÷àñîâîé îïëàòû: ";
     cin >> s;
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ % Ð¿Ñ€ÐµÐ¼Ð¸Ð¸ ";
+    cout << "Ââåäèòå % ïðåìèè ";
     cin >> p;
 }
-void f(double h,double s,double p, double& salary, double& nalog, double& total){
+
+void f(double& h,double& s,double& p, double& salary,double& nalog,double& total){
     salary = h * s * (1 + p / 100);
     nalog = salary * 0.13;
     total = salary - nalog;
-    
 }
 
 
 int main(){
     setlocale(0, "");
-    double h, s, p, salary, nalog, total;
-    vvod(h,s,p);
-    f(h,s,p,salary,nalog,total);
-    
-    cout << "ÐžÐ±Ñ‰Ð°Ñ Ð·Ð°Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ð°Ñ ÑÑƒÐ¼Ð¼Ð° ÑÐ¾ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ " << salary << endl;
-    cout << "ÐŸÐ¾Ð´Ð¾Ñ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð½Ð°Ð»Ð¾Ð³ ÑÐ¾ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ " << nalog << endl;
-    cout << "Ð¡ÑƒÐ¼Ð¼Ð°, Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼Ð°Ñ Ð½Ð° Ñ€ÑƒÐºÐ¸, ÑÐ¾ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ " << total << endl;
+    double h, s, p, salary ,nalog, total;
+
+    vvod(h, s, p);
+    f(h, s, p, salary ,nalog, total);
+
+    cout << "Îáùàÿ çàðàáîòàííàÿ ñóììà ñîñòàâëÿåò " << salary << endl;
+    cout << "Ïîäîõîäíûé íàëîã ñîñòàâëÿåò " << nalog << endl;
+    cout << "Ñóììà, ïîëó÷àåìàÿ íà ðóêè, ñîñòàâëÿåò " << total << endl;
+
     return 0;
 }
-

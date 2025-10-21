@@ -1,27 +1,31 @@
 #include <iostream>
 using namespace std;
 
-void vvod(double& h1,  double& s1, double& h2,  double& s2){
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ Ñ‡Ð°ÑÐ¾Ð² Ð¸ ÑÑ‚Ð°Ð²ÐºÑƒ Ð´Ð»Ñ 1 Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: ";
-    cin >> h1 >> s1;
-    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»-Ð²Ð¾ Ñ‡Ð°ÑÐ¾Ð² Ð¸ ÑÑ‚Ð°Ð²ÐºÑƒ Ð´Ð»Ñ 2 Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°: ";
-    cin >> h2 >> s2;
+void vvod(double& h,double& s){
+    cout << "Ââåäèòå ÷àñû è ñòàâêó: ";
+    cin >> h >> s;
+   
 }
 
-void f(double h1,  double s1, double h2,  double s2, double& salary1, double& salary2){
-    salary1 = h1 * s1;
-    salary2 = h2 * s2;
+void f(double& h, double& s, double& salary){
+    salary = h*s;
 }
-
 
 int main(){
     setlocale(0, "");
-    double h1, s1, h2, s2, salary1, salary2;
-    vvod(h1, s1, h2, s2);
-    f(h1, s1, h2, s2, salary1, salary2);
+    double h1, h2, s1, s2, salary1, salary2;
 
-    cout << "Ð—Ð°Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð» Ð±Ð¾Ð»ÑŒÑˆÐµ Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸Ðº Ð¿Ð¾Ð´ Ð½Ð¾Ð¼ÐµÑ€Ð¾Ð¼ " << (salary1 > salary2?"1":"2") << endl;
-    cout << "Ð¡ÑƒÐ¼Ð¼Ð°, Ð·Ð°Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ð½Ð½Ð°Ñ Ð´Ð²ÑƒÐ¼Ñ Ñ€Ð°Ð±Ð¾Ñ‚Ð½Ð¸ÐºÐ°Ð¼Ð¸ Ð²Ð¼ÐµÑÑ‚Ðµ, ÑÐ¾ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ " << salary1+salary2 << endl;
+    cout << "Äëÿ 1 ðàáîòíèêà:" << endl;
+    vvod(h1, s1);
+    f(h1, s1, salary1);
+
+    cout << "Äëÿ 2 ðàáîòíèêà:" << endl;
+    vvod(h2, s2);
+    f(h2, s2, salary2);
+
+    cout << "Çàðàáîòàë áîëüøå ðàáîòíèê ïîä íîìåðîì " << (salary1 > salary2?"1":"2") << endl;
+    cout << "Ñóììà, çàðàáîòàííàÿ äâóìÿ ðàáîòíèêàìè âìåñòå, ñîñòàâëÿåò " << salary1+salary2 << endl;
 
     return 0;
+
 }
