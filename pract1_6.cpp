@@ -3,26 +3,11 @@
 #include <Windows.h>
 using namespace std;
 
-
-    // for (int i = 0; i < 2; i++){
-    //     cout << i+1 << " ðàáîòíèê: " << endl;
-    //     vvod(h, s, fam);
-    //     f(h, s, salary, nalog, total);
-        
-    //     cout << "h" << i+1 << " = " << h << endl;
-    //     cout << "s" << i+1 << " = " << s << endl;
-    //     cout << "fam" << i+1 << " = " << fam << endl;
-    //     cout << "salary" << i+1 << " = " << salary << endl;
-    //     cout << "nalog" << i+1 << " = " << nalog << endl;
-    //     cout << "total" << i+1 << " = " << total << endl;
-    // }
-
-
 void vvod(double& h, double& s, string& fam){
     
-    cout << "Ââåäèòå ôàìèëèþ ðàáîòíèêà: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã´Ã Ã¬Ã¨Ã«Ã¨Ã¾ Ã°Ã Ã¡Ã®Ã²Ã­Ã¨ÃªÃ : ";
     cin >> fam;
-    cout << "Ââåäèòå êîë-âî îòðàáîòàííûõ ÷àñîâ è ñòàâêó: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«-Ã¢Ã® Ã®Ã²Ã°Ã Ã¡Ã®Ã²Ã Ã­Ã­Ã»Ãµ Ã·Ã Ã±Ã®Ã¢ Ã¨ Ã±Ã²Ã Ã¢ÃªÃ³: ";
     cin >> h >> s;
     cin.ignore();
 }
@@ -43,16 +28,16 @@ int main(){
     double h1, s1, h2, s2, salary1, salary2, nalog1, nalog2, total1, total2;
     string fam1, fam2, fam;
     
-    cout << "Äëÿ 1 ðàáîòíèêà: "<< endl;
+    cout << "Ã„Ã«Ã¿ 1 Ã°Ã Ã¡Ã®Ã²Ã­Ã¨ÃªÃ : "<< endl;
     vvod(h1,s1,fam1);
     f(h1,s1,salary1,nalog1,total1);
 
-    cout << "Äëÿ 2 ðàáîòíèêà: "<< endl;
+    cout << "Ã„Ã«Ã¿ 2 Ã°Ã Ã¡Ã®Ã²Ã­Ã¨ÃªÃ : "<< endl;
     vvod(h2,s2,fam2);
     f(h2,s2,salary2,nalog2,total2);
 
 
-    cout << "Ôàìèëèè òåõ, êòî ïîëó÷èë íà ðóêè ìåíüøå 1000 ðóá - ";
+    cout << "Ã”Ã Ã¬Ã¨Ã«Ã¨Ã¨ Ã²Ã¥Ãµ, ÃªÃ²Ã® Ã¯Ã®Ã«Ã³Ã·Ã¨Ã« Ã­Ã  Ã°Ã³ÃªÃ¨ Ã¬Ã¥Ã­Ã¼Ã¸Ã¥ 1000 Ã°Ã³Ã¡ - ";
     if (total1 < 1000) {
         cout << fam1 << endl;
     }
@@ -62,7 +47,7 @@ int main(){
     cout << endl;
 
 
-    cout << "Ðàáîòíèêè ñ íàëîãîì áîëåå 50 ðóáëåé (ïåðâàÿ è ïîñëåäíÿÿ áóêâà ôàìèëèè):" << endl;
+    cout << "ÃÃ Ã¡Ã®Ã²Ã­Ã¨ÃªÃ¨ Ã± Ã­Ã Ã«Ã®Ã£Ã®Ã¬ Ã¡Ã®Ã«Ã¥Ã¥ 50 Ã°Ã³Ã¡Ã«Ã¥Ã© (Ã¯Ã¥Ã°Ã¢Ã Ã¿ Ã¨ Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã­Ã¿Ã¿ Ã¡Ã³ÃªÃ¢Ã  Ã´Ã Ã¬Ã¨Ã«Ã¨Ã¨):" << endl;
     if (nalog1 > 50) {
         cout << fam1[0] << "-" << fam1[fam1.length() - 1] << endl;
     }
@@ -74,3 +59,4 @@ int main(){
 
     return 0;
 }
+
