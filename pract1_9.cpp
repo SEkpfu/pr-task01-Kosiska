@@ -91,6 +91,8 @@ int main(){
     cout << "максимальная из зарплат и номер получившего ее работника: " << max_element_num(salary, size) << endl;
     cout << "количество работников, получивших на руки более 50000 руб и их номера: "<< bigger_el_num(salary, 50000, size) << endl;
     cout << "общая сумма налога, уплаченного всей бригадой: "<< sum(nalogi, size);
+    delete[] salary;
+    delete[] nalogi;
 
     return 0;
 }

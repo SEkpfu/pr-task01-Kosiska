@@ -3,11 +3,26 @@
 #include <Windows.h>
 using namespace std;
 
+
+    // for (int i = 0; i < 2; i++){
+    //     cout << i+1 << " работник: " << endl;
+    //     vvod(h, s, fam);
+    //     f(h, s, salary, nalog, total);
+        
+    //     cout << "h" << i+1 << " = " << h << endl;
+    //     cout << "s" << i+1 << " = " << s << endl;
+    //     cout << "fam" << i+1 << " = " << fam << endl;
+    //     cout << "salary" << i+1 << " = " << salary << endl;
+    //     cout << "nalog" << i+1 << " = " << nalog << endl;
+    //     cout << "total" << i+1 << " = " << total << endl;
+    // }
+
+
 void vvod(double& h, double& s, string& fam){
     
-    cout << "Ââåäèòå ôàìèëèþ ðàáîòíèêà: ";
+    cout << "Введите фамилию работника: ";
     cin >> fam;
-    cout << "Ââåäèòå êîë-âî îòðàáîòàííûõ ÷àñîâ è ñòàâêó: ";
+    cout << "Введите кол-во отработанных часов и ставку: ";
     cin >> h >> s;
     cin.ignore();
 }
@@ -28,16 +43,16 @@ int main(){
     double h1, s1, h2, s2, salary1, salary2, nalog1, nalog2, total1, total2;
     string fam1, fam2, fam;
     
-    cout << "Äëÿ 1 ðàáîòíèêà: "<< endl;
+    cout << "Для 1 работника: "<< endl;
     vvod(h1,s1,fam1);
     f(h1,s1,salary1,nalog1,total1);
 
-    cout << "Äëÿ 2 ðàáîòíèêà: "<< endl;
+    cout << "Для 2 работника: "<< endl;
     vvod(h2,s2,fam2);
     f(h2,s2,salary2,nalog2,total2);
 
 
-    cout << "Ôàìèëèè òåõ, êòî ïîëó÷èë íà ðóêè ìåíüøå 1000 ðóá - ";
+    cout << "Фамилии тех, кто получил на руки меньше 1000 руб - ";
     if (total1 < 1000) {
         cout << fam1 << endl;
     }
@@ -47,7 +62,7 @@ int main(){
     cout << endl;
 
 
-    cout << "Ðàáîòíèêè ñ íàëîãîì áîëåå 50 ðóáëåé (ïåðâàÿ è ïîñëåäíÿÿ áóêâà ôàìèëèè):" << endl;
+    cout << "Работники с налогом более 50 рублей (первая и последняя буква фамилии):" << endl;
     if (nalog1 > 50) {
         cout << fam1[0] << "-" << fam1[fam1.length() - 1] << endl;
     }
@@ -59,4 +74,3 @@ int main(){
 
     return 0;
 }
-
